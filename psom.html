@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Priya's Cafe</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f8f4f0;
+}
+
+header {
+    background-color: skyblue;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    font-weight: bold;
+}
+
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    color: skyblue;
+}
+
+.menu button {
+    margin: 5px;
+    padding: 8px 15px;
+    background-color: skyblue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.menu button:hover {
+    background-color: black;
+}
+
+#itemDisplay {
+    margin-top: 20px;
+}
+
+#itemDisplay img {
+    width: 250px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+form button{
+    padding:8px 15px;
+    background-color: green;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+form button:hover{
+    background-color:black;
+}
+
+footer {
+    background-color: brown;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+@media (max-width:600px){
+    nav a{
+        display:block;
+        margin:5px 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>☕ Priya's Cafe</h1>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#offers">Offers</a>
+<a href="#menu">Menu</a>
+<a href="#order">Order</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section id="home">
+<h2>Welcome to Our Cafe</h2>
+<p>Fresh Coffee | Tasty Snacks | Happy Moments</p>
+</section>
+
+<section id="about">
+<h2>About Us</h2>
+<p>We serve freshly brewed coffee and delicious homemade snacks.</p>
+<img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb" width="400">
+</section>
+
+<!-- OFFERS SECTION -->
+<section id="offers">
+<h2>🎉 Special Offers</h2>
+<p>🔥 Buy 2 Cappuccinos & Get 1 Free</p>
+<p>🍰 20% OFF on Desserts (4PM - 6PM)</p>
+<p>🥪 Combo Offer: Coffee + Sandwich @ ₹170</p>
+</section>
+
+<!-- MENU SECTION (shortened sample) -->
+
+<!-- ONLINE ORDER SECTION -->
+<section id="order">
+<h2>🛒 Order Online</h2>
+
+<form onsubmit="placeOrder(event)">
+    
+    <label>Select Item:</label><br>
+    <section id="menu">
+<h2>Our Menu</h2>
+
+<div class="menu">
+
+<h3>☕ Hot Coffee</h3>
+<button onclick="showItem('Espresso','₹100','https://images.unsplash.com/photo-1511920170033-f8396924c348')">Espresso</button>
+<button onclick="showItem('Cappuccino','₹120','https://images.unsplash.com/photo-1495474472287-4d71bcdd2085')">Cappuccino</button>
+<button onclick="showItem('Latte','₹140','https://images.unsplash.com/photo-1461023058943-07fcbe16d735')">Latte</button>
+<button onclick="showItem('Americano','₹110','https://images.unsplash.com/photo-1509042239860-f550ce710b93')">Americano</button>
+<button onclick="showItem('Mocha','₹150','https://images.unsplash.com/photo-1504754524776-8f4f37790ca0')">Mocha</button>
+<button onclick="showItem('Filter Coffee','₹90','https://images.unsplash.com/photo-1559056199-641a0ac8b55e')">Filter Coffee</button>
+
+<h3>🧊 Cold Coffee</h3>
+<button onclick="showItem('Iced Coffee','₹120','https://images.unsplash.com/photo-1517705008128-361805f42e86')">Iced Coffee</button>
+<button onclick="showItem('Cold Coffee with Ice Cream','₹160','https://images.unsplash.com/photo-1563805042-7684c019e1cb')">Cold Coffee + Ice Cream</button>
+<button onclick="showItem('Caramel Iced Latte','₹180','https://images.unsplash.com/photo-1510626176961-4b37d2b6f94b')">Caramel Latte</button>
+<button onclick="showItem('Frappe','₹150','https://images.unsplash.com/photo-1577801593601-52d6a1c07f4e')">Frappe</button>
+
+<h3>🥪 Snacks</h3>
+<button onclick="showItem('Veg Sandwich','₹80','https://images.unsplash.com/photo-1528735602780-2552fd46c7af')">Veg Sandwich</button>
+<button onclick="showItem('Grilled Cheese Sandwich','₹110','https://images.unsplash.com/photo-1554433607-66b5efe9d304')">Grilled Sandwich</button>
+<button onclick="showItem('French Fries','₹90','https://images.unsplash.com/photo-1541592106381-b31e9677c0e5')">French Fries</button>
+<button onclick="showItem('Veg Burger','₹120','https://images.unsplash.com/photo-1550547660-d9450f859349')">Veg Burger</button>
+<button onclick="showItem('Mini Pizza','₹150','https://images.unsplash.com/photo-1548365328-9f547fb0953e')">Mini Pizza</button>
+<button onclick="showItem('Paneer Wrap','₹130','https://images.unsplash.com/photo-1604908176997-4316d80a1c8f')">Paneer Wrap</button>
+
+<h3>🍰 Desserts</h3>
+<button onclick="showItem('Chocolate Cake','₹150','https://images.unsplash.com/photo-1578985545062-69928b1d9587')">Chocolate Cake</button>
+<button onclick="showItem('Brownie with Ice Cream','₹180','https://images.unsplash.com/photo-1606313564200-e75d5e30476c')">Brownie</button>
+<button onclick="showItem('Donut','₹70','https://images.unsplash.com/photo-1551024601-bec78aea704b')">Donut</button>
+<button onclick="showItem('Blueberry Muffin','₹90','https://images.unsplash.com/photo-1608198093002-ad4e005484ec')">Muffin</button>
+<button onclick="showItem('Croissant','₹85','https://images.unsplash.com/photo-1587731349894-7b2d0b5b8d5b')">Croissant</button>
+
+<h3>🥤 Beverages</h3>
+<button onclick="showItem('Hot Chocolate','₹130','https://images.unsplash.com/photo-1606313564200-e75d5e30476c')">Hot Chocolate</button>
+<button onclick="showItem('Green Tea','₹60','https://images.unsplash.com/photo-1509042239860-f550ce710b93')">Green Tea</button>
+<button onclick="showItem('Milkshake','₹140','https://images.unsplash.com/photo-1572490122747-3968b75cc699')">Milkshake</button>
+
+</div>
+
+<div id="itemDisplay"></div>
+
+</section><br><br>
+
+    <label>Quantity:</label><br>
+    <input type="number" id="quantity" value="1" min="1"><br><br>
+
+    <button type="submit">Place Order</button>
+</form>
+
+<h3 id="totalAmount"></h3>
+</section>
+
+<section id="contact">
+<h2>Contact Us</h2>
+<p>Email: priyascafe@gmail.com</p>
+<p>Phone: +91 9876543210</p>
+</section>
+
+<footer>
+<p>© 2026 Priya's Cafe | All Rights Reserved</p>
+</footer>
+
+<script>
+function showItem(name, price, image){
+    document.getElementById("itemDisplay").innerHTML =
+    "<h3>"+ name +"</h3>" +
+    "<p>Price: "+ price +"</p>" +
+    "<img src='"+ image +"'>";
+}
+
+function placeOrder(event){
+    event.preventDefault();
+
+    var price = document.getElementById("orderItem").value;
+    var quantity = document.getElementById("quantity").value;
+
+    var total = price * quantity;
+
+    document.getElementById("totalAmount").innerHTML =
+    "✅ Order Placed Successfully! <br>Total Amount: ₹" + total;
+}
+</script>
+
+</body>
+</html>
